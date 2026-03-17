@@ -40,4 +40,9 @@ print(" Accuracy:",accuracy_score(y_test,pred))
 user_news = input("Enter custom news : ")
 news = [user_news]
 news_vec = vectorizer.transform(news)
-print("Prediction: ", model.predict(news_vec))
+result =  model.predict(news_vec)
+if result==1:
+  news_msg = "This news is Real"
+else:
+  news_msg = "This news is Fake"
+print("Prediction: ",news_msg)
